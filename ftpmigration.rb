@@ -6,7 +6,7 @@ while confirm == "no"
 
     #Gather up FTP information for remote account
 	puts "What is the FTP URL of the account you are trying to migrate?"
-	ftp_url = gets.chomp.downcase!
+	ftp_url = gets.chomp
 	puts "What is the username of the FTP account?"
 	ftp_user = gets.chomp
 	puts "What is the password?"
@@ -16,15 +16,10 @@ while confirm == "no"
 
     #Information for local site5 account
 	puts "What is the local site5 username?"
-	site5_user = gets.chomp.downcase!
-
-	if site5_user.length > 8
-		puts "The username is too long. Please be sure to use the cPanel username"
-	else
-	end
+	site5_user = gets.chomp
 
 	puts "Is this an addon domain of the above cPanel account? (yes or no)"
-	site5_addon = gets.chomp.downcase!
+	site5_addon = gets.chomp
 
 	if site5_addon == "yes"
 		puts "What is the directory that this addon domains files should be uploaded to?"
@@ -43,7 +38,7 @@ while confirm == "no"
 	end
 
 	puts "Is this correct? (yes or no)"
-	confirm = gets.chomp.downcase!
+	confirm = gets.chomp
 	
 	if confirm == "no"
 		puts "Let's start over."
